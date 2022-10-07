@@ -3,6 +3,12 @@ buttonGerar.addEventListener("click", (e) => {
   e.preventDefault();
   gerarPrimos();
 });
+let controladorInput = document.querySelector(".controlador__input-teto");
+controladorInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    gerarPrimos();
+  }
+});
 
 function gerarPrimos() {
   let primos = [];

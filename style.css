@@ -32,6 +32,10 @@ body {
   width: 50%;
   border-bottom: solid #ffffff;
 }
+.controlador__input-teto::placeholder{
+  color: #fff;
+  opacity: 70%;
+}
 .controlador__titulo {
   font-size: 35px;
   padding: 5px;
@@ -41,6 +45,10 @@ body {
   display: flex;
   border: solid #008529;
   height: 100%;
+}
+.resumo{
+  font-size: 20px;
+  margin: 5px;
 }
 .titulo-principal {
   font-size: 65px;
