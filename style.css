@@ -7,14 +7,6 @@ body {
   justify-content: space-between;
   height: 95vh;
 }
-h1{
-  font-size: 65px;
-  margin: 5px;
-}
-h2{
-  font-size: 35px;
-  padding: 5px;
-}
 .coluna {
   background-color: #008529;
   color: white;
@@ -27,13 +19,8 @@ h2{
   justify-content: center;
   background-color: #008529;
 }
-.grafico {
-  align-items: flex-end;
-  display: flex;
-  border: solid #008529;
-  height: 100%;
-}
-.input-teto,.button-gerar{
+.controlador__input-teto,
+.controlador__button-gerar {
   border: none;
   background-color: #008529;
   color: white;
@@ -41,7 +28,21 @@ h2{
   margin: 1px 10px;
   text-align: center;
 }
-.input-teto{
+.controlador__input-teto {
   width: 50%;
   border-bottom: solid #ffffff;
+}
+.controlador__titulo {
+  font-size: 35px;
+  padding: 5px;
+}
+.grafico {
+  align-items: flex-end;
+  display: flex;
+  border: solid #008529;
+  height: 100%;
+}
+.titulo-principal {
+  font-size: 65px;
+  margin: 5px;
 }

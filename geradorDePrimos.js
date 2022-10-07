@@ -1,41 +1,47 @@
-let buttonGerar = document.querySelector(".button-gerar");
+let buttonGerar = document.querySelector(".controlador__button-gerar");
 buttonGerar.addEventListener("click", (e) => {
   e.preventDefault();
   gerarPrimos();
 });
+
 function gerarPrimos() {
   let primos = [];
-  const teto = document.querySelector(".input-teto").value;
-  for (let candidato = 2; candidato <= teto; candidato++) {
-    let candidatoAtualEPrimo = true;
-    primos.forEach((primo) => {
-      if (candidato % primo == 0) {
-        candidatoAtualEPrimo = false;
-      }
-    });
+  const menorPrimo = 2;
+  const teto = document.querySelector(".controlador__input-teto").value;
+  for (let candidato = menorPrimo; candidato <= teto; candidato++) {
+    let candidatoAtualEPrimo = testaSePrimo(candidato, primos);
     if (candidatoAtualEPrimo) {
       primos.push(candidato);
     }
   }
-  adicionaPrimoAoGrafico(primos);
+  adicionaPrimosAoGrafico(primos);
 }
 
-function adicionaPrimoAoGrafico(primos) {
+function testaSePrimo(candidato, primos) {
+  let candidatoAtualEPrimo = true;
+  primos.forEach((primo) => {
+    if (candidato % primo == 0) {
+      candidatoAtualEPrimo = false;
+    }
+  });
+  return candidatoAtualEPrimo;
+}
+
+function adicionaPrimosAoGrafico(primos) {
   let grafico = document.querySelector(".grafico");
   grafico.innerHTML = "";
-  let maiorPrimo = primos[primos.length - 1];
   primos.forEach((primo) => {
-    grafico.appendChild(criaMedidaNoGrafico(primo, maiorPrimo));
+    grafico.appendChild(criaMedidaNoGrafico(primo, primos));
   });
 }
 
-function criaMedidaNoGrafico(numero, maiorPrimo) {
+function criaMedidaNoGrafico(numero, primos) {
   let div = document.createElement("div");
   div.textContent = numero;
   div.className = "coluna";
-  let tamanhoProporcional = (numero * 80) / maiorPrimo;
-  div.style.height = tamanhoProporcional + "vh";
-  div.style.width = 100/maiorPrimo + "vw"
-  div.style.fontSize = 1000/maiorPrimo+"px";
+  let maiorPrimo = primos[primos.length - 1];
+  div.style.height = (numero * 80) / maiorPrimo + "vh";
+  div.style.width = 100 / maiorPrimo + "vw";
+  div.style.fontSize = 1000 / maiorPrimo + "px";
   return div;
 }
