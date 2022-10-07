@@ -1,0 +1,47 @@
+body {
+  background-color: #030303;
+  color: #1ca152;
+  font-family: "Gemunu Libre", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95vh;
+}
+h1{
+  font-size: 65px;
+  margin: 5px;
+}
+h2{
+  font-size: 35px;
+  padding: 5px;
+}
+.coluna {
+  background-color: #008529;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+.controlador {
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-color: #008529;
+}
+.grafico {
+  align-items: flex-end;
+  display: flex;
+  border: solid #008529;
+  height: 100%;
+}
+.input-teto,.button-gerar{
+  border: none;
+  background-color: #008529;
+  color: white;
+  font-size: 25px;
+  margin: 1px 10px;
+  text-align: center;
+}
+.input-teto{
+  width: 50%;
+  border-bottom: solid #ffffff;
+}
